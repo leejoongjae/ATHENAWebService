@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.athena.oauth.mapper.OauthMapper">
+	<select id="selectOauthCmpnInfo" parameterType="oauth" resultType="oauth">
+		SELECT COMPANY_CD, API_KEY, API_SECRET, USE_YN
+		FROM OAUTH_USERS
+		WHERE COMPANY_CD = #{companyCd}
+	</select>
+</mapper>

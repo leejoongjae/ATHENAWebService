@@ -1,0 +1,393 @@
+@charset "utf-8";
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0;
+    }
+}
+
+.lh2 {
+    line-height: 2 !important;
+}
+
+#wrap.print_area {
+    margin: 1.6cm;
+}
+
+/*** 수료증  ***/
+.cert-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.cert-view.font_Gs {
+    font-family: 'ChosunGs';
+}
+
+.cert-view .cert_bg, .cert-view .cert_bg03 {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.cert-view .cert_bg02 {
+    display: inline-block;
+    position: fixed;
+    top: 52%;
+    left: 50%;
+    transform: translate(-52%, -50%);
+    z-index: -1;
+    opacity: 1;
+    width: 60%;
+    -webkit-transform: translate(-52%, -50%);
+    -moz-transform: translate(-52%, -50%);
+    -ms-transform: translate(-52%, -50%);
+    -o-transform: translate(-52%, -50%);
+}
+
+.semi_logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+}
+
+.semi_logo img {
+    display: inline-block;
+    height: 100%;
+}
+
+
+.cert-cord {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cert-tit {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 10px;
+    padding-bottom: 15px;
+}
+
+.cert-tit2 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 10px;
+    padding: 50px 0 70px 0;
+}
+
+.semi_cert .tit_upper {
+    font-size: 25px;
+    color: #aaa;
+    text-align: center;
+    margin: 30px 0 0;
+}
+
+.semi_cert .cert-tit2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 10px;
+    padding: 0 0 80px 0;
+}
+
+.cert-view .table_wrap {
+    position: relative;
+    left: 48.5%;
+    transform: translateX(-48.5%);
+    width: 100%;
+}
+
+.cert-view .table_wrap .cert_class {
+    margin: 1.2em 0 1em;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.cert-view .table_wrap .table_box {
+    position: relative;
+    width: 100%;
+}
+
+.cert-view .table_wrap .table_box table {
+    position: relative;
+    left: 0;
+    width: 90%;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 21px;
+}
+
+.cert-view .table_wrap .table_box table th {
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-right: 30px;
+}
+
+.cert-view .table_wrap .table_box table td {
+    font-weight: 600;
+}
+
+.cert-view .table_wrap .table_box table th::after {
+    display: block;
+    position: absolute;
+    right: -20px;
+    top: 47%;
+    transform: translateY(-50%);
+    content: ":";
+    font-size: 22px;
+    font-family: Noto Sans KR;
+}
+
+.cert-view .table_wrap .cert_ment {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 25px;
+    padding-bottom: 1em;
+}
+
+.cert-view .table_wrap .cert_date {
+    text-align: center;
+    padding: 15px 0 0px 0;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.cert-view.font_Gs .table_wrap .cert_date {
+    text-align: right;
+    padding: 15px 0 0px 0;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.cert-view .table_wrap .table_box table td.date {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.cert-view .table_wrap .table_box table.cert-uni {
+    width: 450px;
+    left: 50px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.cert-view .table_wrap .table_box table.cert-uni th::after {
+    display: none;
+}
+
+.cert-view .table_wrap .table_box .user-info {
+    /* text-align: right; */
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.cert-view.semi_cert .table_wrap .table_box .user-info {
+    /* text-align: right; */
+    font-size: 20px;
+    margin: 0 30px;
+}
+
+.cert-view .table_wrap .table_box .user-info li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cert-view .table_wrap .table_box .user-info li strong,
+.cert-view .table_wrap .table_box .user-info li span {
+    display: inline-block;
+}
+
+.cert-view .table_wrap .table_box .user-info li strong::after {
+    content: ":";
+    margin: 0 10px;
+}
+
+.cert-view .table_wrap .table_box .user-info li span {
+    flex: 1;
+    font-size: 18px;
+}
+
+.cert-view .table_wrap .class_name {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cert-view .table_wrap .class_name .cl_tit,
+.cert-view .table_wrap .class_name .cl_cont {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.cert-view .table_wrap .class_name .cl_tit {
+    /* max-width: 200px; */
+    font-weight: bold;
+}
+
+.cert-view .table_wrap .class_name .cl_tit::after {
+    content: ":";
+    margin: 0 10px;
+}
+
+.cert-view .table_wrap .class_name .cl_cont {
+    flex: 1 0 1;
+}
+
+.cert-view .table_wrap .table_box table.cert-info {
+    font-size: 14px;
+    width: 98%;
+    max-height: 380px;
+    min-height: 200px;
+}
+
+.cert-view .table_wrap .table_box table.cert-info th {
+    display: table-cell;
+}
+
+.cert-view .table_wrap .table_box table.cert-info th::after {
+    display: none;
+}
+
+.cert-view .table_wrap .table_box table.cert-info td {
+    font-weight: 500;
+}
+
+.cert-view .table_wrap .table_box table.cert-info.tbl>thead>tr>th {
+    padding: 5px 2px;
+    background: rgba(247, 249, 250, .0);
+}
+
+.cert-view .table_wrap .table_box table.cert-info.tbl>tbody>tr>td {
+    padding: 5px 2px;
+    background: rgba(255, 255, 255, .0);
+}
+
+.cert-view .cert-footer {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    margin: 0 auto 1.6cm;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 1.6cm;
+    text-align: center;
+}
+
+.cert-view .cert-footer.completion {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    margin: 0 auto 1.3cm;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 1.6cm;
+    text-align: center;
+}
+
+.cert-view .cert-footer .uni_pre {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+.cert-view .cert-footer .uni {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.cert-view.semi_cert .cert-footer .uni {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 80px;
+}
+
+.cert-view .cert-footer .uni_pre span,
+.cert-view .cert-footer .uni span {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.cert-view .cert-footer .cert_seal {
+    display: inline-block;
+    position: absolute;
+    top: 15%;
+    left: 65%;
+    z-index: -1;
+    max-width: 85px;
+}
+
+.cert-view.semi_cert .cert-footer .cert_seal {
+    display: inline-block;
+    position: absolute;
+    top: 25%;
+    left: 63%;
+    z-index: -1;
+    max-width: 85px;
+}
+
+.cert-view .cert-footer .cert_seal02 {
+    display: inline-block;
+    position: absolute;
+    top: 3%;
+    left: 73%;
+    z-index: -1;
+    max-width: 85px;
+    width: 20%;
+}
+
+.cert-view .cert-footer .uni-logo {
+    padding: 40px 0 10px 0;
+}
+
+.cert-view .cert-footer .uni-logo img {
+    max-width: 100%;
+}
+
+.cert-view.eng .cert-tit {
+    font-size: 40px;
+    letter-spacing: 0px;
+}
+
+.cert-view.eng .table_wrap .table_box table.cert-uni {
+    width: auto;
+    left: 0;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.cert-view.eng .table_wrap .table_box table.cert-uni th {
+    border-bottom: 1px solid #d9d9d9;
+    display: table-cell;
+    text-align: left;
+    padding: 5px 15px 5px 0;
+}
+
+.cert-view.eng .table_wrap .table_box table.cert-uni td {
+    font-size: 16px;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 5px 0
+}
+
+.cert-view.eng .cert-footer .uni {
+    font-size: 24px;
+}

@@ -1,0 +1,1138 @@
+@charset "utf-8";
+
+/* sect_01 */
+.sub_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../intro_img/sub_bg_top.jpg) no-repeat center;
+    background-size: cover;
+    animation: zoom 3s 0s ease-in-out;
+    z-index: -1;
+}
+
+.sub_bg::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    animation: color_ch 1.5s 3.5s ease-out infinite alternate both;
+    z-index: -1;
+}
+
+@keyframes zoom {
+    0% {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        -webkit-transition: ease-out 3s;
+        -o-transition: ease-out 3s;
+        transition: ease-out 3s;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes color_ch {
+    0% {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, 0.4);
+    }
+}
+
+.section .inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px 2em;
+}
+
+/* sub visual */
+.sect_01 .cont_sub {
+    max-width: 680px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 200px 0 100px;
+    text-align: center;
+}
+
+.sect_01 .cont_sub h2 {
+    width: 100%;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.7);
+}
+
+.sect_01 .cont_sub p {
+    font-size: 20px;
+    margin-top: 30px;
+    color: #cdcdcd;
+    text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* sub layout */
+.content {
+    color: #333;
+    padding: 80px 0 0;
+}
+
+.content::after {
+    position: absolute;
+    width: 600px;
+    width: 300px;
+}
+
+.flex-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* sub tab */
+.tab-list {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    max-width: 1280px;
+    margin: 0 auto;
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+    margin-bottom: 50px;
+}
+
+.tab-list_item {
+    /* width: 50%;
+    max-width: 233px; */
+    height: 60px;
+}
+
+.tab-list_item a {
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.tab-list_item:not(:first-child) {
+    margin-left: -1px;
+}
+
+.tab-list_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+    border: 1px solid #d6d6d6;
+    background-color: #fff;
+    transition: font-weight .3s, color .3s, border-color .3s, background-color .3s;
+}
+
+.tab-list_link.active {
+    font-weight: 600;
+    color: #fff;
+    border-color: #222;
+    background-color: #222;
+}
+
+.tab-list_link:hover {
+    font-weight: 600;
+    color: #fff;
+    border-color: #222;
+    background-color: #222;
+}
+
+/* sub title */
+.content h3.tab_tit {
+    font-size: 38px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content h4 {
+    font-size: 1.875em;
+    margin-bottom: 20px;
+}
+
+.content h5 {
+    font-size: 1.563em;
+    margin-bottom: 30px;
+    color: #12477C;
+}
+
+.curriculum_tit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.curriculum_tit p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #33a0d8;
+}
+
+.curriculum_tit .curi_logo {
+    width: 150px;
+    height: 30px;
+}
+
+.curriculum_tit .curi_logo img {
+    display: inline-block;
+    width: 100%;
+}
+
+/* sub content */
+.imgbox {
+    position: relative;
+    max-width: 525px;
+    /* margin-left: 20px; */
+}
+
+.imgbox img {
+    max-width: 100%;
+}
+
+.imgbox.full {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 50px;
+}
+
+/* .imgbox.full img {
+    max-width: auto;
+} */
+
+.left_textbox {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.full_textbox {
+    width: 100%;
+}
+
+.full_textbox.bg_img02 {
+    padding-top: 350px;
+    background: url(../intro_img/semicon_img02.png) no-repeat center top;
+}
+
+.text_01 {
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.text_01 strong {
+    font-weight: 600;
+    color: #33a0d8;
+}
+
+.text_02 {
+    font-size: 20px;
+    line-height: 1.7;
+    font-weight: 500;
+    text-align: center;
+}
+
+.text_02 span {
+    display: block;
+}
+
+.text_02 strong {
+    font-weight: 600;
+    color: #33a0d8;
+}
+
+.text_03 {
+    font-size: 20px;
+    line-height: 1.7;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.goal_list {
+    margin-bottom: 60px;
+}
+
+.goal_list li {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.goal_list li .goal {
+    font-size: 20px;
+    font-weight: 600;
+    color: #33a0d8;
+}
+
+.course_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.course_list li {
+    width: 24%;
+    padding: 50px 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 10%);
+}
+
+.course_list li .tit {
+    display: block;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+ul.dot_lsit {
+    margin-bottom: 40px;
+}
+
+ul.dot_lsit li {
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.7em;
+    padding-left: 15px;
+}
+
+ul.dot_lsit li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #333;
+    margin-right: 5px;
+    position: absolute;
+    left: 0;
+    top: 11px;
+}
+
+.course_hakjum {
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+.course_hakjum dt {
+    font-size: 20px;
+    font-weight: 600;
+    color: #33a0d8;
+    margin-bottom: 15px;
+}
+
+.course_hakjum dd p {
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.7em;
+    padding-left: 15px;
+}
+
+.course_hakjum dd p::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #333;
+    margin-right: 5px;
+    position: absolute;
+    left: 0;
+    top: 11px;
+}
+
+.course_hakjum dd strong {
+    font-weight: 600;
+}
+
+.course_hakjum dl {
+    margin-bottom: 80px;
+}
+
+.univ_wrap {
+    margin-bottom: 60px;
+}
+
+.univ_wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.univ_wrap ul li {
+    width: 49%;
+    margin-right: 2%;
+    border: 1px solid #d9d9d9;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.univ_wrap ul li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.univ_info {
+    width: 100%;
+    font-size: 17px;
+}
+
+.univ_info .tit {
+    display: flex;
+    align-items: center;
+}
+
+.univ_info .tit>div {
+    max-width: 65%;
+}
+
+.univ_info .tit strong {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.univ_info .tit small {
+    display: block;
+    font-size: 0.867em;
+    color: #a5a5a5;
+}
+
+.univ_info .tel {
+    margin-left: auto;
+}
+
+.univ_info a {
+    color: #333;
+}
+
+.univ_info .desc {
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 1px solid #d9d9d9;
+}
+
+.go_link a {
+    color: #222;
+    font-weight: 500;
+    display: inline-block;
+    padding: 15px 30px 15px 30px;
+    border-radius: 35px;
+    border: solid 3px #000000;
+    margin-bottom: 80px;
+}
+
+.tbl {
+    width: 100%;
+    border-top: 1px solid #5e5d5d;
+    border-bottom: 1px solid #9ea1a9;
+}
+
+.tbl>thead>tr>th {
+    padding: 14px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 1px solid #e2e2e2;
+    background: #f4f4f4;
+}
+
+.tbl>tbody>tr>th {
+    padding: 14px 10px;
+    border-bottom: 1px solid #9ea1a9;
+    background: #f9f9f9;
+}
+
+.tbl>tbody>tr>td {
+    padding: 14px 10px;
+    font-size: 16px;
+    min-height: 43px;
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.tbl>thead>tr>th:first-child,
+.tbl>tbody>tr>td:first-child {
+    border-left: none;
+}
+
+.tbl>thead>tr>th.line,
+.tbl>tbody>tr>td.line {
+    border-left: 1px solid #9ea1a9;
+}
+
+.tbl>tbody>tr>td.head {
+    padding-left: 10px;
+    font-weight: 500;
+    text-align: left;
+    color: #183f91;
+    border-left: none;
+    border-bottom: 1px solid #98d0ef;
+    border-right: 1px solid #98d0ef;
+    background: #f5fafc;
+}
+
+.tbl>tbody>tr>td.subtit {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #222;
+    padding-top: 2rem;
+}
+
+.tbl>tbody>tr>td {
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.tbl>thead>tr>th:first-child,
+.tbl>tfoot>tr>th:first-child,
+.tbl>tbody>tr>td:first-child {
+    border-left: none;
+}
+
+.tbl>tbody>tr.total {
+    background-color: #f7f9fa;
+}
+
+.tbl>tbody>tr.total td {
+    font-weight: 500;
+}
+
+/* 스크롤 테이블 */
+.table-scroll {
+    display: flex;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    overflow: auto;
+    margin: 1em 0 2em;
+}
+
+.table-scroll .tbl-main-wrap {
+    flex: 1;
+}
+
+.table-scroll .tbl-main {
+    width: 100%;
+}
+
+.table-scroll .tbl-main .fix_tbl {
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid #5e5d5d;
+    border-bottom: 1px solid #9ea1a9;
+}
+
+.table-scroll .tbl-main .fix_tbl th {
+    padding: .5em 1em;
+    white-space: nowrap;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 1px solid #e2e2e2;
+    background: #f4f4f4;
+}
+
+.table-scroll .tbl-main .fix_tbl th:first-child {
+    border-left: none;
+}
+
+.table-scroll .tbl-main .fix_tbl td {
+    min-width: 100px;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e1e4e8;
+    font-size: 0.933em;
+    padding: .5em 0.938em !important;
+    white-space: nowrap;
+}
+
+.table-scroll .tbl-main .fix_tbl td.wh_wrap {
+    white-space: wrap;
+}
+
+.table-scroll .tbl-main .fix_tbl td.la_txt {
+    font-size: 1.125em;
+}
+
+.table-scroll .tbl-main .fix_tbl td.bl_none {
+    border-left: none;
+}
+
+
+.misson_area {
+    padding: 60px 0;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 50px;
+    background: #1f2933;
+}
+
+.misson_area strong {
+    background: #fff;
+    color: #000;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* ai_vison */
+.ai_vison {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.ai_vison .goal_list {
+    width: 40%;
+    margin-bottom: 0;
+}
+
+.ai_vison .goal_list:last-child {
+    margin-left: auto;
+
+}
+
+.ai_vison .ai_u2 {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.ai_vison .ai_u2 img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* right_textbox */
+.right_textbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right_textbox .img_box {
+    width: 60%;
+}
+
+.right_textbox .img_box img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.right_textbox .text_box {
+    width: 400px;
+    margin-left: auto;
+}
+
+.dot_lsit.ai li strong {
+    color: #7950f2;
+}
+
+.course_hakjum.ai strong {
+    font-size: 1.25em;
+    color: #7950f2;
+}
+
+/* list_img */
+.list_img {
+    padding: 1em 0 2em;
+}
+
+.list_img>li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.list_img>li p.sw_txt {
+    width: 30%;
+    font-size: 1.375em;
+    color: #1864ab;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list_img>li p.txt_margin {
+    margin-bottom: 1.875em;
+}
+
+.list_img>li .listImg_box {
+    display: block;
+    max-width: 700px;
+    flex: 1;
+}
+
+.list_img>li .listImg_box img {
+    display: inline-block;
+    width: 100%;
+    object-fit: contain;
+}
+
+.list_img.v2>li {
+    display: flex;
+    align-items: flex-start;
+}
+
+.list_img>li .sm_listImg_box {
+    width: 40%;
+    margin-right: 2em;
+    text-align: center;
+}
+
+.list_img>li .sm_listImg_box img {
+    display: inline-block;
+    width: 40%;
+}
+
+.list_img>li .text_box {
+    max-width: 1000px;
+}
+
+.list_img>li .text_box div {
+    display: flex;
+}
+
+.list_img>li .text_box div .head {
+    display: inline-block;
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #1c7ed6;
+    margin-right: 1em;
+    white-space: nowrap;
+}
+
+.list_img>li .text_box ol {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/***********************************
+            MEDIA QUERY 
+************************************/
+@media all and (max-width:1024px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* 스크롤 테이블 */
+    .table-scroll .tbl-main {
+        cursor: move;
+    }
+
+    .content {
+        padding: 60px 0;
+    }
+
+    .section.content .inner {
+        padding: 0 20px;
+    }
+
+    .sect_01 .cont_sub h2 {
+        font-size: 40px;
+    }
+
+    .sect_01 .cont_sub p {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .tab-list {
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    .content h3.tab_tit {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    .content h4 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .left_textbox {
+        width: 100%;
+    }
+
+    .text_01 {
+        font-size: 16px;
+    }
+
+    .text_02 {
+        font-size: 16px;
+    }
+
+    .full_textbox.bg_img02 {
+        background-size: 90%;
+    }
+
+    .goal_list li {
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+
+    .goal_list li .goal {
+        font-size: 18px;
+    }
+
+    .course_list li {
+        padding: 40px 20px;
+    }
+
+    .univ_wrap ul li {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .misson_area {
+        padding: 40px 0;
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .tab-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 1280px;
+        margin: 0 auto;
+        /* display: flex;
+        justify-content: center;
+        flex-wrap: wrap; */
+        margin-bottom: 50px;
+    }
+
+    .content h5 {
+        margin-bottom: 0;
+        font-size: 1.25em;
+    }
+
+    .list_img>li .sm_listImg_box {
+        width: 20%;
+    }
+
+    .list_img>li .sm_listImg_box img {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media all and (max-width:768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 50px 0;
+    }
+
+    .sect_01 .cont_sub {
+        padding: 100px 0 50px;
+    }
+
+    .sect_01 .cont_sub h2 {
+        font-size: 35px;
+    }
+
+    .sect_01 .cont_sub p {
+        font-size: 16px;
+        margin-top: 12px;
+    }
+
+    .tab-list_link {
+        font-size: 15px;
+    }
+
+    .tab-list_item {
+        height: 50px;
+    }
+
+    .content h3.tab_tit {
+        font-size: 28px;
+    }
+
+    .content h4 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .text_01 {
+        font-size: 15px;
+    }
+
+    .flex-wrap {
+        flex-direction: column;
+    }
+
+    .imgbox {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+
+    .goal_list li {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .goal_list li .goal {
+        font-size: 17px;
+    }
+
+    .course_list li {
+        padding: 40px 20px;
+    }
+
+    .course_list li .tit {
+        font-size: 17px;
+    }
+
+    .course_hakjum dd p {
+        font-size: 17px;
+    }
+
+    .full_textbox.bg_img02 {
+        padding-top: 280px;
+        background-size: 100%;
+    }
+
+    .univ_info .tit strong {
+        font-size: 16px;
+    }
+
+    .univ_info .tel {
+        font-size: 15px;
+    }
+
+    .univ_wrap ul li {
+        padding: 20px 20px;
+        margin-bottom: 10px;
+    }
+
+    .univ_wrap {
+        margin-bottom: 40px;
+    }
+
+    .text_02 span {
+        display: inline;
+    }
+
+    .tbl>thead>tr>th {
+        font-size: 15px;
+    }
+
+    .tbl>tbody>tr>td {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    ul.dot_lsit li {
+        font-size: 16px;
+    }
+
+    .course_hakjum dt {
+        font-size: 18px;
+    }
+
+    .course_hakjum dd {
+        font-size: 16px;
+    }
+
+    .univ_info .desc {
+        font-size: 15px;
+    }
+
+    .text_03 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .misson_area {
+        padding: 30px 10px;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .ai_vison .ai_u2 {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media all and (max-width:600px) {
+    body {
+        font-size: 15px;
+    }
+
+    .tab-list_link {
+        font-size: 13px;
+    }
+
+    .tab-list_item {
+        height: 40px;
+    }
+
+    .tab-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 1280px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    .list_img>li p.sw_txt {
+        width: 20%;
+        font-size: 1em;
+    }
+
+    .list_img li p {
+        width: 20%;
+        font-size: 1.125em;
+        color: #1864ab;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .list_img.v2>li {
+        flex-direction: column;
+    }
+
+    .list_img>li .sm_listImg_box {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .list_img>li .sm_listImg_box img {
+        display: inline-block;
+        width: 40%;
+    }
+
+    .table-scroll .tbl-main .fix_tbl td.la_txt {
+        font-size: 1em;
+    }
+
+}
+
+@media all and (max-width:480px) {
+    .sect_01 .cont_sub h2 {
+        font-size: 30px;
+    }
+
+    .sect_01 .cont_sub p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .content h3.tab_tit {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .content h4 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .course_list li .tit {
+        font-size: 16px;
+    }
+
+    .course_hakjum dd p {
+        font-size: 15px;
+        line-height: 1.5em;
+    }
+
+    .full_textbox.bg_img02 {
+        padding-top: 220px;
+    }
+
+    .goal_list li {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .goal_list li .goal {
+        font-size: 16px;
+    }
+
+    .univ_info .tit strong {
+        font-size: 15px;
+    }
+
+    .univ_wrap ul li {
+        padding: 20px 10px;
+    }
+
+    .univ_info .tel {
+        font-size: 14px;
+    }
+
+    .course_list li {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+    .course_hakjum dt {
+        font-size: 17px;
+    }
+
+    .course_hakjum dd {
+        font-size: 15px;
+    }
+
+    .univ_info .desc {
+        font-size: 14px;
+    }
+
+    .misson_area {
+        font-size: 16px;
+    }
+
+    .ai_vison .ai_u2 {
+        width: 50px;
+        margin: 0 auto;
+    }
+
+    .list_img li p {
+        width: 20%;
+        font-size: 0.938em;
+        color: #1864ab;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .list_img li p.txt_margin {
+        margin-bottom: 1em;
+    }
+
+}

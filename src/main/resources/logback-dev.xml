@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	
+	<!-- 변수 지정 -->
+    <property name="LOG_DIR" value="/logs" />
+    <property name="LOG_PATH_NAME" value="${LOG_DIR}/coss_web_log" />
+	
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-3level %logger{5} - %msg %n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- FILE Appender -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH_NAME}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH_NAME}.%d{yyyyMMdd}</fileNamePattern>
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%F]%M\(%L\) : %m%n</pattern>
+        </encoder>
+    </appender>
+    
+	<!-- 로칼테스트 일때.. -->
+	<logger name="jdbc" level="OFF"/>	
+	<logger name="jdbc.sqlonly" level="OFF"/>
+	<logger name="jdbc.sqltiming" level="ERROR"/>
+	<logger name="jdbc.audit" level="OFF"/>
+	<logger name="jdbc.resultset" level="OFF"/>
+	<logger name="jdbc.resultsettable" level="ERROR"/>
+	<logger name="jdbc.connection" level="OFF"/>
+	
+	<root level="ERROR">
+	  <appender-ref ref="STDOUT"/>
+	</root>
+	
+</configuration>
