@@ -9,30 +9,22 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Oauth VO
+ * AccessToken VO
  * @author ljj
  *
  */
-@Alias("oauth")
+@Alias("accessToken")
 @Getter
 @Setter
 @ToString
-public class Oauth implements Serializable {
+public class AccessToken implements Serializable {
 
 	private static final long serialVersionUID = -1548638781636479909L;
 	
 	private String msg;
-	private String companyCd;
-	private String apiKey;
-	private String apiSecret;
-	private String token;
 	private String accessToken;
+	private long expires;
 	private String refreshToken;
-	private String useYn;
-	private String refreshYn;
-	private String revokeYn;
-	private String regDttm;
-	private String modDttm;
-	
+	private long refreshExpires;
 	
 }

@@ -7,4 +7,42 @@
 		FROM OAUTH_USERS
 		WHERE COMPANY_CD = #{companyCd}
 	</select>
+	
+	<select id="selectOauthTokenInfo" parameterType="oauth" resultType="oauth">
+		SELECT COMPANY_CD, ACCESS_TOKEN, REFRESH_TOKEN, REFRESH_YN, REVOKE_YN, USE_YN, REG_DTTM, MOD_DTTM, REVOKE_DTTM
+		FROM OAUTH_TOKEN
+		WHERE COMPANY_CD = #{companyCd}
+		AND USE_YN = 'Y'
+		AND REVOKE_YN = 'N'
+	</select>
+	
+	<update id="updateOauthUseN" parameterType="oauth" >
+		UPDATE OAUTH_TOKEN
+			SET
+				USE_YN = 'N',
+				MOD_DTTM = CURRENT_TIMESTAMP
+		WHERE COMPANY_CD = #{companyCd}
+		AND USE_YN = 'Y'
+		AND REVOKE_YN = 'N'
+	</update>
+	
+	<update id="updateOauthRevoke" parameterType="oauth" >
+		UPDATE OAUTH_TOKEN
+			SET
+				REVOKE_YN = 'Y',
+				USE_YN = 'N',
+				MOD_DTTM = CURRENT_TIMESTAMP, 
+				REVOKE_DTTM = CURRENT_TIMESTAMP
+		WHERE COMPANY_CD = #{companyCd}
+		AND USE_YN = 'Y'
+		AND REVOKE_YN = 'N'
+	</update>
+	
+	<insert id="insertOauth" parameterType="oauth" >
+		INSERT INTO OAUTH_TOKEN(
+			COMPANY_CD, ACCESS_TOKEN, REFRESH_TOKEN, REFRESH_YN, REVOKE_YN, REG_DTTM
+		)VALUES(
+			#{companyCd}, #{accessToken}, #{refreshToken}, #{refreshYn}, #{revokeYn}, CURRENT_TIMESTAMP
+		)
+	</insert>
 </mapper>

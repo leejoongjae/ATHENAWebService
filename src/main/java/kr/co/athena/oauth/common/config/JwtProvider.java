@@ -124,7 +124,7 @@ public class JwtProvider {
 		return token;
 	}
 	
-	public static String generateTokenAthena(int jwtExpire_sec, String apiKey, String apiSecret, String companyCd) throws Exception {
+	public static String generateTokenAthena(long jwtExpire_sec, String apiKey, String apiSecret, String companyCd) throws Exception {
 
 		Date expiration = new Date(System.currentTimeMillis() + (jwtExpire_sec * 1000));
 
@@ -134,14 +134,14 @@ public class JwtProvider {
 				.setHeaderParam(JwsHeader.ALGORITHM, ALGORITHM.getJcaName())
 				.setIssuer(apiKey)
 				.setExpiration(expiration)
-				.signWith(key)
+				.signWith(ALGORITHM, apiSecret.getBytes())
 				.compact();
 
 		return token;
 	}
 	
     // ✅ 리프레시 토큰 생성
-    public String generateRefreshTokenAthena(int jwtExpire_sec, String apiKey, String apiSecret, String companyCd) throws Exception {
+    public static String generateRefreshTokenAthena(long jwtExpire_sec, String apiKey, String apiSecret, String companyCd) throws Exception {
     	Date expiration = new Date(System.currentTimeMillis() + (jwtExpire_sec * 1000));
     	
     	String token = Jwts.builder()
@@ -150,14 +150,14 @@ public class JwtProvider {
 				.setHeaderParam(JwsHeader.ALGORITHM, ALGORITHM.getJcaName())
 				.setIssuer(apiKey)
 				.setExpiration(expiration)
-				.signWith(key)
+				.signWith(ALGORITHM, apiSecret.getBytes())
 				.compact();
 
 		return token;
     }
 
     // ✅ 토큰에서 사용자 이름 추출
-    public String extractUsername(String token) {
+    public static String extractUsername(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()
@@ -167,7 +167,7 @@ public class JwtProvider {
     }
 
     // ✅ 토큰 유효성 검증
-    public boolean validateToken(String token) {
+    public static boolean validateToken(String token) {
     	Jws<Claims> claimsJws = null;
         try {
         	claimsJws = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);

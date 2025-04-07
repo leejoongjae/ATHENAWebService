@@ -25,5 +25,30 @@ public class OauthService {
 		oauth = this.oauthMapper.selectOauthCmpnInfo(oauth);
 		return oauth;
 	}
+	
+	@Transactional(readOnly = true)
+	public Oauth getOauthTokenInfo(Oauth oauth)
+	{
+		oauth = this.oauthMapper.selectOauthTokenInfo(oauth);
+		return oauth;
+	}
+	
+	@Transactional(rollbackFor = Exception.class)
+	public void editOauthUseN(Oauth oauth)
+	{
+		this.oauthMapper.updateOauthUseN(oauth);
+	}
+	
+	@Transactional(rollbackFor = Exception.class)
+	public void editOauthRevoke(Oauth oauth)
+	{
+		this.oauthMapper.updateOauthRevoke(oauth);
+	}
+	
+	@Transactional(rollbackFor = Exception.class)
+	public void addOauth(Oauth oauth)
+	{
+		this.oauthMapper.insertOauth(oauth);
+	}
 		
 }

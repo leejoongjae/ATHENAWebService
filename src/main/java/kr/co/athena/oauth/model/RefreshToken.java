@@ -9,30 +9,20 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Oauth VO
+ * RefreshToken VO
  * @author ljj
  *
  */
-@Alias("oauth")
+@Alias("refreshToken")
 @Getter
 @Setter
 @ToString
-public class Oauth implements Serializable {
+public class RefreshToken implements Serializable {
 
 	private static final long serialVersionUID = -1548638781636479909L;
 	
 	private String msg;
-	private String companyCd;
-	private String apiKey;
-	private String apiSecret;
-	private String token;
 	private String accessToken;
-	private String refreshToken;
-	private String useYn;
-	private String refreshYn;
-	private String revokeYn;
-	private String regDttm;
-	private String modDttm;
-	
+	private long expires;
 	
 }
