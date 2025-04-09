@@ -22,7 +22,7 @@ public class RefreshToken implements Serializable {
 	private static final long serialVersionUID = -1548638781636479909L;
 	
 	private String msg;
-	private String accessToken;
-	private long expires;
+	private String refreshToken;
+	private long refreshExpires;
 	
 }

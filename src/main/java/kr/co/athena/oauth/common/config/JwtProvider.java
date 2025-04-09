@@ -9,11 +9,13 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Base64Utils;
 
 import kr.co.athena.oauth.common.Constants;
 import kr.co.athena.oauth.common.util.AES256Util;
@@ -183,6 +185,20 @@ public class JwtProvider {
         	System.out.println("Invalid Token: " + e.getMessage());
             return false;
         }
+    }
+    
+    // Authorization client_id, client_secret 값 추출 
+    public static String[] extractBasicAuthCredentials(HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.startsWith("Basic ")) {
+            // Authorization: Basic base64encoded(client_id:client_secret)
+            String base64Credentials = authHeader.substring("Basic ".length());
+            byte[] decodedBytes = Base64Utils.decodeFromString(base64Credentials);
+            String decoded = new String(decodedBytes);
+            String[] parts = decoded.split(":", 2); // [client_id, client_secret]
+            return parts;
+        }
+        return null;
     }
 
 	//해당 블록 실행하면 테스트 토큰 얻을수 있음

@@ -23,6 +23,12 @@ public class Oauth implements Serializable {
 	
 	private String msg;
 	private String companyCd;
+	private String orgCode;
+	private String clientId;
+	private String clientSecret;
+	private String userId;
+	private String userNo;
+	private String insDn;
 	private String apiKey;
 	private String apiSecret;
 	private String token;

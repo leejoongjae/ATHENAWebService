@@ -3,15 +3,22 @@
 
 <mapper namespace="kr.co.athena.oauth.mapper.OauthMapper">
 	<select id="selectOauthCmpnInfo" parameterType="oauth" resultType="oauth">
-		SELECT COMPANY_CD, API_KEY, API_SECRET, USE_YN
+		SELECT ORG_CODE, USER_ID, CLIENT_ID, CLIENT_SECRET, USE_YN
 		FROM OAUTH_USERS
-		WHERE COMPANY_CD = #{companyCd}
+		WHERE ORG_CODE = #{orgCode}
+		AND USER_ID = #{userId}
 	</select>
 	
 	<select id="selectOauthTokenInfo" parameterType="oauth" resultType="oauth">
-		SELECT COMPANY_CD, ACCESS_TOKEN, REFRESH_TOKEN, REFRESH_YN, REVOKE_YN, USE_YN, REG_DTTM, MOD_DTTM, REVOKE_DTTM
+		SELECT 
+			ORG_CODE, USER_ID, USER_NO, INS_DN, 
+			ACCESS_TOKEN, REFRESH_TOKEN, REFRESH_YN, REVOKE_YN, 
+			USE_YN, REG_DTTM, MOD_DTTM, REVOKE_DTTM
 		FROM OAUTH_TOKEN
-		WHERE COMPANY_CD = #{companyCd}
+		WHERE ORG_CODE = #{orgCode}
+		AND USER_ID = #{userId}
+		AND USER_NO = #{userNo} 
+		AND INS_DN = #{insDn}
 		AND USE_YN = 'Y'
 		AND REVOKE_YN = 'N'
 	</select>
@@ -21,7 +28,10 @@
 			SET
 				USE_YN = 'N',
 				MOD_DTTM = CURRENT_TIMESTAMP
-		WHERE COMPANY_CD = #{companyCd}
+		WHERE ORG_CODE = #{orgCode}
+		AND USER_ID = #{userId}
+		AND USER_NO = #{userNo} 
+		AND INS_DN = #{insDn}
 		AND USE_YN = 'Y'
 		AND REVOKE_YN = 'N'
 	</update>
@@ -33,16 +43,19 @@
 				USE_YN = 'N',
 				MOD_DTTM = CURRENT_TIMESTAMP, 
 				REVOKE_DTTM = CURRENT_TIMESTAMP
-		WHERE COMPANY_CD = #{companyCd}
+		WHERE ORG_CODE = #{orgCode}
+		AND USER_ID = #{userId}
+		AND USER_NO = #{userNo}
+		AND INS_DN = #{insDn}
 		AND USE_YN = 'Y'
 		AND REVOKE_YN = 'N'
 	</update>
 	
 	<insert id="insertOauth" parameterType="oauth" >
 		INSERT INTO OAUTH_TOKEN(
-			COMPANY_CD, ACCESS_TOKEN, REFRESH_TOKEN, REFRESH_YN, REVOKE_YN, REG_DTTM
+			ORG_CODE, USER_ID, USER_NO, INS_DN, ACCESS_TOKEN, REFRESH_TOKEN, REFRESH_YN, REVOKE_YN, REG_DTTM
 		)VALUES(
-			#{companyCd}, #{accessToken}, #{refreshToken}, #{refreshYn}, #{revokeYn}, CURRENT_TIMESTAMP
+			#{orgCode}, #{userId}, #{userNo}, #{insDn}, #{accessToken}, #{refreshToken}, #{refreshYn}, #{revokeYn}, CURRENT_TIMESTAMP
 		)
 	</insert>
 </mapper>

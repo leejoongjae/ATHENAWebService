@@ -24,7 +24,5 @@ public class AccessToken implements Serializable {
 	private String msg;
 	private String accessToken;
 	private long expires;
-	private String refreshToken;
-	private long refreshExpires;
 	
 }
